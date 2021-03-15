@@ -1,3 +1,5 @@
+import sbt.ModuleID
+
 package object explicitdeps {
 
   type Binary = sbt.CrossVersion.Binary
@@ -22,4 +24,6 @@ package object explicitdeps {
     def \@(attributeName: String): String = (nodeSeq \ ("@" + attributeName)).text
 
   }
+
+  def modulePlatform(m: ModuleID): Option[ScalaJSVersion] = None
 }
